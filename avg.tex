@@ -38,9 +38,9 @@ As a result, an important question emerges:
 
 \vspace{5pt}
 
-The goal of this project is to investigate the relationships between several offensive statistics and regular season wins in the MLB since 2000. Particular 
+The goal of this project is to investigate the relationships between several offensive statistics and runs scored in the MLB since 2000. Particular 
 attention is given to batting average, on-base percentage, slugging percentage, OPS, walk rate, strikeout rate, and isolated power. By comparing the strength of 
-the relationships between these statistics and team wins, this analysis seeks to whether batting average remains a valuable measure of team success compared to 
+the relationships between these statistics and runs scored, this analysis seeks to whether batting average remains a valuable measure of team success compared to 
 more modern metrics.
 
 \vspace{20pt}
@@ -56,7 +56,7 @@ schedule resulting from the COVID-19 pandemic.
 
 Each observation in the dataset represents a single Major League Baseball team during a particular season. After filtering, the dataset contained 750 team-seasons. 
 Several offensive variables were selected for analysis, including at-bats (AB), hits (H), doubles (2B), triples (3B), home runs (HR), walks (BB), strikeouts (SO), 
-sacrifice flies (SF), and regular season wins (W). 
+sacrifice flies (SF), and runs scored. 
 
 \vspace{5pt}
 
@@ -114,21 +114,20 @@ power, draw walks, and avoid strikeouts.
 
 \vspace{5pt}
 
-Pearson correlation coefficients were then calculated between regular season wins and each offensive statistic. The Pearson correlation coefficient provides a 
+Pearson correlation coefficients were then calculated between runs scored and each offensive statistic. The Pearson correlation coefficient provides a 
 measure of the strength and direction of a linear relationship between two variables, taking values between -1 and 1. Values close to 1 indicate a strong positive 
 association, values close to -1 indicate a strong negative association, and values near 0 suggest little or no linear relationship.
 
 \vspace{5pt}
 
-After calculating the correlation coefficients, the offensive statistics exhibiting the strongest relationships with wins were identified. Particular attention was 
+After calculating the correlation coefficients, the offensive statistics exhibiting the strongest relationships with runs were identified. Particular attention was 
 given to comparing batting average with more modern offensive metrics such as OBP, SLG, and OPS. This comparison was motivated by the ongoing debate within 
 baseball analytics regarding the usefulness of batting average as a measure of offensive performance.
 
 \vspace{5pt}
 
-To complement the numerical analysis, scatterplots were created to visualize the relationships between selected offensive statistics and regular season wins. 
-These visualizations were used to identify overall trends, compare the strength of relationships, and highlight notable team-seasons that appeared to deviate 
-from the general patterns observed in the data.
+To complement the numerical analysis, scatterplots were created to visualize the relationships between selected offensive statistics and runs scored. 
+These visualizations were used to identify overall trends and compare the strength of relationships.
 
 \vspace{20pt}
 
@@ -141,25 +140,22 @@ hits a player gets per at-bat.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{wins_avg.png}
-    \caption{Relationship between batting average and regular season wins.}
+    \includegraphics[width=0.8\textwidth]{runs_avg.png}
+    \caption{Relationship between batting average and runs scored.}
     \label{fig:avg}
 \end{figure}
 
-Observing the graph, it is quite clear that there is not a very strong linear relationship between batting average and wins. The relatively weak r-value of 0.360 
+Observing the graph, there is a somewhat strong linear relationship between batting average and runs. The relatively middling r-value of 0.714 
 suggests this, along with a large amount of teams that prove to be great examples of why batting average alone is not a very accurate measure of success in the MLB.
 
 \vspace{5pt}
 
-The 2001 Colorado Rockies had an extremely impressive batting average of 0.292, the second-highest batting average out of any team analyzed. However, as is obvious 
-in the graph they did not have a very successful year whatsoever, with a record of 73-89. The high batting average was driven by Coors Field's hitter-friendly 
-environment, but poor pitching led to an unsuccessful season. This is a great example of how batting average doesn't necessarily correlate to wins as much as some 
-believe it does.
+A great example of this is the 2010 Royals, a team that batted above average with 0.274 but only ended up scoring 676 runs, with a record of 67-95.
 
 \subsection{Metric Comparison}
 
-Here's how every other metric analyzed compares to batting average in terms of correlation with wins. This chart makes it clear that the correlation between batting 
-average and wins is not nearly as strong as other modern metrics.
+Here's how every other metric analyzed compares to batting average in terms of correlation with runs. This chart makes it clear that the correlation between batting 
+average and runs is not nearly as strong as other modern metrics.
 
 \begin{figure}[H]
     \centering
@@ -170,40 +166,37 @@ average and wins is not nearly as strong as other modern metrics.
 
 \newpage
 
-Let's look at the metrics that have the top 3 strongest correlations with wins, starting with Slugging Percentage in 3rd.
-
-\subsection{Slugging Percentage}
-
-Slugging Percentage is actually very similar to Batting Average, with one small difference. Slugging Percentage also measures how many hits a player gets per at 
-bat, but weighs doubles, triples, and home runs increasingly heavier. This could be interpreted as a 'bases per at-bat' as opposed to hits per at bat.
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.8\textwidth]{wins_slg.png}
-    \caption{Relationship between slugging percentage and regular season wins.}
-    \label{fig:slg}
-\end{figure}
-
-The visual makes it very clear that slugging has a much stronger correlation with wins than batting average.
-
-\newpage
+Let's look at the metrics that have the top 3 strongest correlations with runs.
 
 \subsection{On-Base Percentage}
 
-In 2nd place, we have On-Base Percentage. This is a very simple metric, measuring how often a player gets on base per 
+In 3rd place, we have On-Base Percentage. This is a very simple metric, measuring how often a player gets on base per 
 plate appearance, hence the name on-base percentage.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{wins_obp.png}
-    \caption{Relationship between on-base percentage and regular season wins.}
-    \label{fig:slg}
+    \includegraphics[width=0.8\textwidth]{runs_obp.png}
+    \caption{Relationship between on-base percentage and runs scored.}
+    \label{fig:obp}
 \end{figure}
 
 \vspace{10pt}
 
-The season pinned here is the 2002 Oakland Athletics, well-known for being the 'Moneyball' team who prioritized OBP rather 
-than AVG and ended up winning 103/162 games.
+\newpage
+
+\subsection{Slugging Percentage}
+
+In 2nd place we have slugging percentage. Slugging Percentage is actually very similar to Batting Average, with one small difference. Slugging Percentage also measures how many hits a player gets per at 
+bat, but weighs doubles, triples, and home runs increasingly heavier. This could be interpreted as a 'bases per at-bat' as opposed to hits per at bat.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{runs_slg.png}
+    \caption{Relationship between slugging percentage and runs scored.}
+    \label{fig:slg}
+\end{figure}
+
+The visual makes it very clear that slugging has a much stronger correlation with runs than batting average.
 
 \newpage
 
@@ -213,8 +206,8 @@ In 1st place is OPS. This metric simply adds the last two stats together, OBP an
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{wins_ops.png}
-    \caption{Relationship between OPS and regular season wins.}
+    \includegraphics[width=0.8\textwidth]{runs_ops.png}
+    \caption{Relationship between OPS and runs scored.}
     \label{fig:ops}
 \end{figure}
 
@@ -223,12 +216,12 @@ In 1st place is OPS. This metric simply adds the last two stats together, OBP an
 \section{Discussion}
 
 \hspace{12pt} The results of this analysis suggest that batting average is not nearly as strong of an indicator of team success as other modern metrics such as SLG, 
-OBP and OPS. This supports the idea that simply recording hits is less informative that measuring the quality of those hits and a team's ability to generate total 
+OBP and OPS. This supports the idea that simply recording hits is less informative than measuring the quality of those hits and a team's ability to generate total 
 offensive production.
 
 \vspace{5pt}
 
-In particular, slugging percentage shows a noticeably stronger correlation with wins than batting average. This is because SLG accounts for extra-base hits, which 
+In particular, slugging percentage shows a noticeably stronger correlation with runs than batting average. This is because SLG accounts for extra-base hits, which 
 contribute more directly to run scoring than singles. As a result, SLG better captures offensive power, which has a greater impact on a team's ability to win games.
 
 \vspace{5pt}
@@ -238,14 +231,8 @@ hit-by-pitches, it reflects a team's ability to sustain innings and create more 
 
 \vspace{5pt}
 
-OPS, which combines OBP and SLG, shows the strongest overall relationship with wins among the metrics tested. This suggests that a balanced measure of both 
+OPS, which combines OBP and SLG, shows the strongest overall relationship with runs among the metrics tested. This suggests that a balanced measure of both 
 getting on base and hitting for power provides a more complete representation of offensive value than any single component alone.
-
-\vspace{5pt}
-
-However, the differences between these correlations are relatively small and should not be overinterpreted. Wins in baseball are influenced by many factors outside 
-of offense, including pitching quality, defense, bullpen performance, and situational sequencing. Therefore, even strong offensive metrics will only explain part 
-of the variation in team success. This explains why the highest r-value observed was still less than 0.6 (not even an incredibly strong r-value itself).
 
 \vspace{5pt}
 
@@ -261,7 +248,7 @@ well-known and widely used statistic, it does not capture important aspects of o
 
 \vspace{5pt}
 
-Metrics such as slugging percentage, on-base percentage, and especially OPS show stronger correlations with regular season wins, suggesting that overall offensive 
+Metrics such as slugging percentage, on-base percentage, and especially OPS show stronger correlations with runs scored, suggesting that overall offensive 
 value is better represented by a combination of getting on base and hitting for extra bases rather than simply recording hits.
 
 \vspace{5pt}
